@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Title="Histórico de Desastres"
+             BackgroundColor="ForestGreen"
+             x:Class="MeioAmbiente.Views.ListagemView">
+    <ContentPage.Content>
+        <StackLayout  Padding="25">
+            <CollectionView ItemsSource="{Binding .}" x:Name="_lst">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Vertical" HeightRequest="100" WidthRequest="200">
+                            <Label Text="{Binding Pesquisa.Localidade}"
+                                   FontSize="Medium" 
+                                   TextColor="Black" 
+                                   FontAttributes="Bold">
+                            </Label>
+                            <Label Text="{Binding Pesquisa.Bairro}" 
+                                   FontSize="Medium" 
+                                   TextColor="Black" 
+                                   FontAttributes="Bold">
+                            </Label>
+                            <Label Text="{Binding Pesquisa.Logradouro}" 
+                                   FontSize="Medium" 
+                                   TextColor="Black" 
+                                   FontAttributes="Bold">
+                            </Label>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <!--<ListView ItemsSource="{Binding .}" x:Name="_lst" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ImageCell Text="{Binding Pesquisa.Logradouro}" 
+                                   Detail="{Binding Pesquisa.Localidade}" 
+                                   ImageSource="Perigo5.png"
+                                   TextColor="Black"> 
+                        </ImageCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>-->
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

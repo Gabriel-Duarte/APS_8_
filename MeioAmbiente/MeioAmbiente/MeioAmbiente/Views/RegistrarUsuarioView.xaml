@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             mc:Ignorable="d"            
+             Title="Registrar"
+             BackgroundColor="ForestGreen"
+             x:Class="MeioAmbiente.Views.RegistrarUsuarioView">
+    <ContentPage.Content>
+        <StackLayout Padding="25">
+            <Entry Placeholder="Insira o usuário" 
+                   Text="{Binding Username}" 
+                   TextColor="Black"
+                   FontAttributes="Bold">
+            </Entry>
+            <Entry Placeholder="Insira a senha" 
+                   Text="{Binding Password}" 
+                   TextColor="Black"
+                   FontAttributes="Bold"
+                   IsPassword="True">
+            </Entry>
+            <Entry Placeholder="Insira o email" 
+                   Text="{Binding Email}" 
+                   TextColor="Black"
+                   FontAttributes="Bold"
+                   Keyboard="Email">
+            </Entry>
+            <Entry Placeholder="Insira o telefone" 
+                   Text="{Binding Telefone}" 
+                   TextColor="Black"
+                   FontAttributes="Bold"
+                   MaxLength="11"
+                   Keyboard="Telephone">
+            </Entry>
+            <Button Text="Cadastrar" 
+                    BackgroundColor="DeepSkyBlue"
+                    TextColor="White"
+                    Command="{Binding CadastrarCommand}"
+                    FontAttributes="Bold">
+            </Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

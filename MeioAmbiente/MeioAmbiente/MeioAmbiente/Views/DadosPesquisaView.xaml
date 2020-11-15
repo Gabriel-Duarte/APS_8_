@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             BackgroundColor="ForestGreen"
+             x:Class="MeioAmbiente.Views.DadosPesquisaView"
+             Title="Resultado da Pesquisa">
+    <ContentPage.Content>
+        <StackLayout Padding="25">
+            <TableView>
+                <TableRoot>
+                    <TableSection Title="Local do Desastre" TextColor="Yellow">
+                        <EntryCell Label="Cidade:" 
+                                   Text="{Binding Localidade}" 
+                                   IsEnabled="False" 
+                                   LabelColor="Black">
+                        </EntryCell>
+                        <EntryCell Label="Bairro:" 
+                                   Text="{Binding Bairro}" 
+                                   IsEnabled="False" 
+                                   LabelColor="Black" >
+                        </EntryCell>
+                        <EntryCell Label="Logradouro:" 
+                                   Text="{Binding Logradouro}"
+                                   IsEnabled="False" 
+                                   LabelColor="Black">
+                        </EntryCell>
+                        <EntryCell Label="Estado:" 
+                                   Text="{Binding Uf}"
+                                   IsEnabled="False" 
+                                   LabelColor="Black">
+                        </EntryCell>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+            <Button ImageSource="Mapa4.png" 
+                    FontAttributes="Bold" 
+                    Command="{Binding VerMapaCommand}" 
+                    BackgroundColor="DeepSkyBlue" 
+                    TextColor="White"
+                    Padding="5"
+                    Margin="10">
+            </Button>
+            <Button Text="Proximo" 
+                    FontAttributes="Bold" 
+                    Command="{Binding EntrarCommand}"
+                    BackgroundColor="DeepSkyBlue" 
+                    TextColor="White"
+                    Padding="5"
+                    Margin="10">
+            </Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

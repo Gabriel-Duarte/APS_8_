@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:vm="clr-namespace:MeioAmbiente.ViewModels"
+             mc:Ignorable="d"
+             BackgroundColor="ForestGreen"
+             Title="Meio Ambiente"
+             x:Class="MeioAmbiente.Views.LoginView">
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel></vm:LoginViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" Margin="32" Padding="25" >
+            <Image Source="Login.png"></Image>
+            <Label Text="Login"
+                   TextColor="Black"
+                   FontSize="30"
+                   HorizontalOptions="Center"
+                   FontAttributes="Bold">
+            </Label>
+            <Entry Placeholder="Nome do usuário" 
+                   Text="{Binding Username}" 
+                   TextColor="Black"
+                   FontAttributes="Bold">
+            </Entry>
+            <Entry Placeholder="Senha do usuário" 
+                   Text="{Binding Password}" 
+                   IsPassword="True" 
+                   TextColor="Black" 
+                   FontAttributes="Bold">
+            </Entry>
+            <Button Text="Login"  
+                    BackgroundColor="DeepSkyBlue"
+                    TextColor="White" 
+                    Command="{Binding LoginCommand}" 
+                    FontAttributes="Bold">
+            </Button>
+            <Button Text="Registrar" 
+                    BackgroundColor="DeepSkyBlue"
+                    TextColor="White"
+                    Clicked="Button_Clicked"
+                    FontAttributes="Bold">
+            </Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

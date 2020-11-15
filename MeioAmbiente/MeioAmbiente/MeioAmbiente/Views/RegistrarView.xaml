@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Title="Registrar"
+             BackgroundColor="ForestGreen"
+             x:Class="MeioAmbiente.Views.RegistrarView">
+    <ContentPage.Content>
+        <StackLayout Padding="15" Margin="10">
+            <Label Text="Data:" 
+                   TextColor="Yellow" 
+                   FontAttributes="Bold">
+            </Label>
+            <DatePicker Date="{Binding DataRegistro}" 
+                        Format="dd/MM/yyyy"
+                        IsEnabled="False">
+            </DatePicker>
+            <TableView Intent="Settings">
+                <!--tabela de configuração-->
+                <TableRoot>
+                    <TableSection Title="Opções de Desastre" TextColor="Yellow">
+                        <SwitchCell Text="{Binding TextoQueimada, Mode=TwoWay}" 
+                                    On="{Binding Queimada, Mode=TwoWay}">
+                        </SwitchCell>
+                        <!-- Switch cell, celula de opção, twoway atualiza os dados na entrada ou quando houver modificaçao-->
+                        <SwitchCell Text="{Binding TextoAlagamento, Mode=TwoWay}" 
+                                    On="{Binding Alagamento, Mode=TwoWay}">
+                        </SwitchCell>
+                        <SwitchCell Text="{Binding TextoDeslizamento, Mode=TwoWay}" 
+                                    On="{Binding DeslizamentoTerra, Mode=TwoWay}">
+                        </SwitchCell>
+                        <SwitchCell Text="{Binding TextoRompimentoBarragem, Mode=TwoWay}" 
+                                    On="{Binding RompimentoBarragem, Mode=TwoWay}">
+                        </SwitchCell>
+                        <SwitchCell Text="{Binding TextoOutros, Mode=TwoWay}" 
+                                    On="{Binding Outros, Mode=TwoWay}">
+                        </SwitchCell>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+            <Label Text="Coloque seu texto aqui:" 
+                   TextColor="Yellow"
+                   FontAttributes="Bold" 
+                   Margin="10">
+            </Label>
+            <Editor  Placeholder="Obrigatório colocar informação do desastre" 
+                     PlaceholderColor="black" 
+                     FontAttributes="Bold" 
+                     TextColor="Black" 
+                     BackgroundColor="WhiteSmoke" 
+                     HeightRequest="150" 
+                     WidthRequest="60" 
+                     MaxLength="250"
+                     Text="{Binding AreaTexto}"
+                     Margin="10">
+            </Editor>
+            <Button Text="Cadastrar" 
+                    FontAttributes="Bold" 
+                    Command="{Binding RegistrarCommand}" 
+                    BackgroundColor="DeepSkyBlue" 
+                    TextColor="White"
+                    Padding="5"
+                    Margin="10">
+            </Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
